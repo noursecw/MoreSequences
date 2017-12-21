@@ -7,8 +7,8 @@ for ITERATING through SEQUENCES, including:
   -- The FIND pattern (via LINEAR SEARCH)
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Charles Nourse.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -76,7 +76,7 @@ def sum_radii(circles):
       :rtype: int | float
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -88,6 +88,13 @@ def sum_radii(circles):
     #       Instead, use explicit loops, as you have for other problems.
     # ------------------------------------------------------------------
 
+    sum = 0
+    for k in range(len(circles)):
+        circle = circles[k]
+        r = circle.radius
+        sum = sum + r
+
+    return sum
 
 # ----------------------------------------------------------------------
 # Some problems iterate (loop) through PART of the sequence,
@@ -151,10 +158,18 @@ def count_last_n_odds(integers, n):
       :rtype: int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
+    count = 0
+    m = len(integers)
+    for k in range(m):
+        if k > m-n-1:
+            if integers[k] % 2 ==1:
+                count = count + 1
+
+    return count
 
 # ----------------------------------------------------------------------
 # Some problems iterate (loop) through PART of the sequence,
@@ -226,10 +241,16 @@ def index_of_first_negative(numbers):
       :rtype: int
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    m = len(numbers)
+    index = -1
+    for k in range(m):
+        if numbers[m-k-1] < 0:
+            index = m-k-1
 
+    return index
 
 def run_test_contains_an_a():
     """ Tests the   contains_an_a   function. """
@@ -284,7 +305,7 @@ def contains_an_a(s):
       :rtype: bool
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -298,6 +319,12 @@ def contains_an_a(s):
     #   No fair using the   count   or   find   string methods.
     # ------------------------------------------------------------------
 
+    b = False
+    for k in range(len(s)):
+        if s[k] == 'a':
+            b = True
+
+    return b
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
